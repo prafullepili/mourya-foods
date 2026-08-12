@@ -1,0 +1,6 @@
+{
+  "name": "Mourya Foods",
+  "description": "Premium Bihar Makhana Brand - Online Store, Wholesale & Export Portal",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
