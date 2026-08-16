@@ -8,49 +8,45 @@ export const NutritionSection: React.FC = () => {
   const scaleFactor = portionSize / 100;
 
   return (
-    <section id="nutrition" className="py-16 md:py-24 bg-[#f9f5eb] text-[#1b3028] font-sans relative">
+    <section id="nutrition" className="pb-10 bg-[#07241b] border-t border-bs-[#d4af37] border-b border-[#fff] text-[#d4af37] font-sans relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-[#0c382b] bg-[#e8ddc5] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#d4af37]/40">
+        <div className="text-center max-w-3xl mx-auto py-10 space-y-3">
+          <span className="text-[#0c382b] bg-[#e8ddc5] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             Certified Nutritional Profile
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0c382b]">
+          <h2 className="font-serif text-3xl mt-4 sm:text-4xl lg:text-5xl font-bold text-[#ffffff]">
             Nutritional Value & Health Profile
           </h2>
-          <p className="text-sm sm:text-base text-gray-700">
+          <p className="text-sm sm:text-base text-gray-300">
             MOURYA FOODS Bihar Makhana is an extraordinary plant-based nutrient storehouse — zero trans fat, high fiber, and rich in vital minerals.
           </p>
           <div className="w-20 h-1 bg-[#d4af37] mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start px-2 lg:px-0">
           {/* Left Column: Interactive Nutrition Card */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#d4af37] shadow-xl space-y-6">
-            
+          <div className="lg:col-span-7 bg-[#0c382b] rounded-3xl p-6 sm:px-8 sm:py-6 border-2 border-[#d4af37] shadow-xl space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#f0e8d5] pb-4">
               <div>
-                <h3 className="font-serif font-bold text-2xl text-[#0c382b]">
+                <h3 className="font-serif font-bold text-2xl text-[#fff]">
                   Nutritional Value
                 </h3>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-300">
                   Approximate Value Per {portionSize}g Serving
                 </p>
               </div>
 
               {/* Portion size selector pill */}
-              <div className="flex items-center gap-1 bg-[#f0e8d5] p-1 rounded-xl">
+              <div className="flex items-center gap-1 bg-[#d4af37] p-1 rounded-xl">
                 {[30, 50, 100].map((size) => (
                   <button
                     key={size}
                     onClick={() => setPortionSize(size)}
-                    className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
-                      portionSize === size
-                        ? 'bg-[#0c382b] text-[#d4af37] shadow'
-                        : 'text-gray-700 hover:text-[#0c382b]'
-                    }`}
+                    className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${portionSize === size
+                      ? 'bg-[#0c382b] text-[#d4af37] shadow'
+                      : 'text-gray-700 hover:text-[#0c382b]'
+                      }`}
                   >
                     {size}g
                   </button>
@@ -61,44 +57,44 @@ export const NutritionSection: React.FC = () => {
             {/* Main Table */}
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
-                <thead>
-                  <tr className="bg-[#0c382b] text-[#d4af37] font-serif text-xs uppercase tracking-wider">
-                    <th className="py-3 px-4 rounded-l-lg">Nutrient</th>
-                    <th className="py-3 px-4 text-right rounded-r-lg">
-                      Value ({portionSize}g)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#f0e8d5]">
+                <tbody className="">
                   {NUTRITION_FACTS.map((item, idx) => {
                     // Calculate scaled value
-                    let displayVal = item.valuePer100g;
-                    if (portionSize !== 100) {
-                      const num = parseFloat(item.valuePer100g);
-                      if (!isNaN(num)) {
-                        const scaled = (num * scaleFactor).toFixed(1);
-                        const unit = item.valuePer100g.replace(/[0-9.]/g, '').trim();
-                        displayVal = `${scaled} ${unit}`;
-                      }
-                    }
 
                     return (
-                      <tr 
-                        key={idx} 
-                        className={`hover:bg-[#fcf8f2] transition-colors ${
-                          item.highlight ? 'font-semibold text-[#0c382b] bg-[#fdfaf3]' : 'text-gray-700'
-                        }`}
-                      >
-                        <td className="py-3 px-4 flex items-center gap-2">
-                          {item.highlight && (
-                            <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0" />
-                          )}
-                          <span>{item.nutrient}</span>
-                        </td>
-                        <td className="py-3 px-4 text-right font-mono font-bold text-[#0c382b]">
-                          {displayVal}
-                        </td>
-                      </tr>
+                      <>
+                        <tr className="bg-[#d4af37] text-[#0c382b] font-serif text-xs uppercase tracking-wider">
+                          <th className="py-3 px-4 rounded-l-lg font-semibold">{item.label}</th>
+                          <th className="py-3 px-4 text-right rounded-r-lg">
+                          </th>
+                        </tr>
+                        {item.values.map((v) => {
+                          let displayVal = v.valuePer100g;
+                          if (portionSize !== 100) {
+                            const num = parseFloat(v.valuePer100g);
+                            if (!isNaN(num)) {
+                              const scaled = (num * scaleFactor).toFixed(1);
+                              const unit = v.valuePer100g.replace(/[0-9.]/g, '').trim();
+                              displayVal = `${scaled} ${unit}`;
+                            }
+                          }
+                          return <tr
+                            key={idx}
+                            className={`transition-colors border-b nth-6:border-b-0 ${v.highlight ? 'font-semibold' : 'text-[#fff]'
+                              }`}
+                          >
+                            <td className="py-3 px-0 flex items-center gap-2">
+                              {v.highlight && (
+                                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0" />
+                              )}
+                              <span>{v.nutrient}</span>
+                            </td>
+                            <td className="py-3 px-4 text-right font-mono font-bold text-[#fff]">
+                              {displayVal}
+                            </td>
+                          </tr>
+                        })}
+                      </>
                     );
                   })}
                 </tbody>
@@ -109,12 +105,10 @@ export const NutritionSection: React.FC = () => {
               <ShieldCheck className="w-5 h-5 text-[#0c382b] shrink-0" />
               <span>* Percentage Daily Values (%DV) are based on a 2,000 calorie diet as per FSSAI regulations.</span>
             </div>
-
           </div>
 
           {/* Right Column: Health Highlights Cards */}
           <div className="lg:col-span-5 space-y-4">
-            
             {/* Low Glycemic Badge Card */}
             <div className="bg-[#0c382b] text-white p-5 rounded-2xl border border-[#d4af37]/40 shadow-lg space-y-2 relative overflow-hidden">
               <div className="flex items-center justify-between">

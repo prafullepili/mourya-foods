@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   HelpCircle,
   ChevronDown,
@@ -171,17 +171,26 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
     setHelpfulFeedback((prev) => ({ ...prev, [id]: choice }));
   };
 
+  // const scrollToSection = () => {
+  //   const element = document.getElementById('wholesale');
+  //   console.log(element);
+  //   if (element) {
+  //     console.log(element);
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
+
   return (
-    <section className="py-16 bg-[#07241b] text-white border-b border-[#1b4e3e] relative overflow-hidden" id="faq-section">
+    <section className="py-10 bg-[#07241b] text-white border-b border-[#1b4e3e] relative overflow-hidden" id="faq-section">
       {/* Background Subtle Accents */}
       <div className="absolute inset-0 bg-lotus-watermark opacity-20 pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#124233] text-[#d4af37] text-xs font-extrabold uppercase tracking-widest border border-[#d4af37]/40 shadow-sm">
             <Sparkles className="w-4 h-4 text-[#d4af37]" />
             Frequently Asked Questions
@@ -197,7 +206,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
 
         {/* Search Bar & Category Filter Tabs */}
         <div className="space-y-6 max-w-4xl mx-auto mb-10">
-          
+
           {/* Search Box */}
           <div className="relative">
             <Search className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -228,11 +237,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border shadow-sm ${
-                    isActive
-                      ? 'bg-[#d4af37] text-[#0c382b] border-[#d4af37] shadow-md scale-102'
-                      : 'bg-[#0c382b] text-gray-300 border-[#2d5848] hover:border-[#d4af37]/60 hover:text-white'
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border shadow-sm ${isActive
+                    ? 'bg-[#d4af37] text-[#0c382b] border-[#d4af37] shadow-md scale-102'
+                    : 'bg-[#0c382b] text-gray-300 border-[#2d5848] hover:border-[#d4af37]/60 hover:text-white'
+                    }`}
                   id={`faq-tab-${cat.id}`}
                 >
                   <Icon className={`w-4 h-4 ${isActive ? 'text-[#0c382b]' : 'text-[#d4af37]'}`} />
@@ -271,11 +279,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
               return (
                 <div
                   key={faq.id}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                    isExpanded
-                      ? 'bg-[#0c382b] border-[#d4af37] shadow-xl ring-1 ring-[#d4af37]/30'
-                      : 'bg-[#092e23] border-[#2d5848] hover:border-[#d4af37]/50'
-                  }`}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isExpanded
+                    ? 'bg-[#0c382b] border-[#d4af37] shadow-xl ring-1 ring-[#d4af37]/30'
+                    : 'bg-[#092e23] border-[#2d5848] hover:border-[#d4af37]/50'
+                    }`}
                   id={faq.id}
                 >
                   {/* Question Accordion Header */}
@@ -295,9 +302,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                       </h3>
                     </div>
 
-                    <div className={`p-2 rounded-xl transition-all shrink-0 mt-1 ${
-                      isExpanded ? 'bg-[#d4af37] text-[#0c382b]' : 'bg-[#124233] text-[#d4af37]'
-                    }`}>
+                    <div className={`p-2 rounded-xl transition-all shrink-0 mt-1 ${isExpanded ? 'bg-[#d4af37] text-[#0c382b]' : 'bg-[#124233] text-[#d4af37]'
+                      }`}>
                       {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                     </div>
                   </button>
@@ -330,11 +336,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => handleFeedback(faq.id, 'yes')}
-                            className={`flex items-center gap-1 px-2.5 py-1 rounded-lg border transition-all ${
-                              feedback === 'yes'
-                                ? 'bg-emerald-600 text-white border-emerald-500'
-                                : 'bg-[#124233] text-gray-300 border-[#2d5848] hover:text-white'
-                            }`}
+                            className={`flex items-center gap-1 px-2.5 py-1 rounded-lg border transition-all ${feedback === 'yes'
+                              ? 'bg-emerald-600 text-white border-emerald-500'
+                              : 'bg-[#124233] text-gray-300 border-[#2d5848] hover:text-white'
+                              }`}
                           >
                             <ThumbsUp className="w-3.5 h-3.5" />
                             <span>Yes</span>
@@ -342,11 +347,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
 
                           <button
                             onClick={() => handleFeedback(faq.id, 'no')}
-                            className={`flex items-center gap-1 px-2.5 py-1 rounded-lg border transition-all ${
-                              feedback === 'no'
-                                ? 'bg-rose-600 text-white border-rose-500'
-                                : 'bg-[#124233] text-gray-300 border-[#2d5848] hover:text-white'
-                            }`}
+                            className={`flex items-center gap-1 px-2.5 py-1 rounded-lg border transition-all ${feedback === 'no'
+                              ? 'bg-rose-600 text-white border-rose-500'
+                              : 'bg-[#124233] text-gray-300 border-[#2d5848] hover:text-white'
+                              }`}
                           >
                             <ThumbsDown className="w-3.5 h-3.5" />
                             <span>No</span>
@@ -380,6 +384,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
             {setActiveTab && (
               <button
                 onClick={() => setActiveTab('wholesale')}
+                // onClick={scrollToSection}
                 className="w-full sm:w-auto px-5 py-3 bg-[#d4af37] text-[#0c382b] hover:bg-[#e2bd44] font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2 uppercase tracking-wider"
               >
                 <span>Bulk Wholesale Enquiry</span>

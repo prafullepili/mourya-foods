@@ -1,0 +1,40 @@
+
+body[data-theme="saffron-sunset"] {
+  background-color: #2a0e08 !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="saffron-sunset"] .bg-\[\#07241b\] {
+  background-color: #2a0e08 !important;
+}
+
+body[data-theme="saffron-sunset"] .bg-\[\#0c382b\] {
+  background-color: #42170d !important;
+}
+
+body[data-theme="saffron-sunset"] .bg-\[\#124233\] {
+  background-color: #5c2113 !important;
+}
+
+body[data-theme="saffron-sunset"] .bg-\[\#1a4d3e\] {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="saffron-sunset"] .border-\[\#2d5848\],
+body[data-theme="saffron-sunset"] .border-\[\#1b4e3e\] {
+  border-color: #7c2d12 !important;
+}
+
+body[data-theme="saffron-sunset"] .text-\[\#e2d5b6\] {
+  color: #fed7aa !important;
+}
+
+body[data-theme="saffron-sunset"] .text-\[\#d4af37\] {
+  color: #f97316 !important;
+}
+
+body[data-theme="saffron-sunset"] .bg-\[\#d4af37\] {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}

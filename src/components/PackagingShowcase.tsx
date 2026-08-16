@@ -34,7 +34,7 @@ export const PackagingShowcase: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-[#08291f] via-[#0c382b] to-[#07241b] text-white relative overflow-hidden border-y border-[#1b4e3e]" id="pack-design">
+    <section className="py-10 md:py-10 bg-gradient-to-b from-[#08291f] via-[#0c382b] to-[#07241b] text-white relative overflow-hidden border-y border-[#1b4e3e]" id="pack-design">
       {/* Background Watermark & Glow */}
       <div className="absolute inset-0 bg-lotus-watermark opacity-30 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
@@ -57,7 +57,7 @@ export const PackagingShowcase: React.FC = () => {
         </div>
 
         {/* View Mode Switcher & Actions Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#07241b] border border-[#2d5848] p-3 sm:p-4 rounded-2xl mb-8 max-w-4xl mx-auto shadow-xl">
+        <div className="flex flex-col sm:flex-row items-center justify-between bg-[#07241b] border border-[#2d5848] p-2 sm:p-3 rounded-2xl mb-8 max-w-4xl mx-auto shadow-xl">
           
           {/* Mode Switcher: Photo Render vs Interactive Vector Specification */}
           <div className="flex items-center gap-2 bg-[#0c382b] p-1 rounded-xl border border-[#2d5848] w-full sm:w-auto justify-center">
@@ -108,7 +108,7 @@ export const PackagingShowcase: React.FC = () => {
         </div>
 
         {/* Variant Size Selector Bar */}
-        <div className="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-8">
+        <div className="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-6">
           {packVariants.map((varItem) => (
             <button
               key={varItem.size}
@@ -130,7 +130,7 @@ export const PackagingShowcase: React.FC = () => {
 
         {/* ================= PHOTO STUDIO MOCKUP VIEW ================= */}
         {viewMode === 'photo' && (
-          <div className="bg-[#0c382b]/90 border-2 border-[#d4af37]/50 rounded-3xl p-4 sm:p-8 shadow-2xl backdrop-blur-md max-w-5xl mx-auto space-y-6">
+          <div className="bg-[#0c382b]/90 border-2 border-[#d4af37]/50 rounded-3xl p-4 sm:p-6 shadow-2xl backdrop-blur-md max-w-5xl mx-auto space-y-6">
             
             <div className="flex items-center justify-between border-b border-[#2d5848] pb-4">
               <div className="flex items-center gap-2">

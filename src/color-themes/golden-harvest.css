@@ -1,0 +1,46 @@
+body[data-theme="golden-harvest"] {
+    background-color: #fbf6ec !important;
+    color: #2d1f05 !important;
+}
+
+body[data-theme="golden-harvest"] .bg-\[\#07241b\] {
+    background-color: #f4e8d3 !important;
+    color: #2d1f05 !important;
+}
+
+body[data-theme="golden-harvest"] .bg-\[\#0c382b\] {
+    background-color: #ffffff !important;
+    color: #2d1f05 !important;
+}
+
+body[data-theme="golden-harvest"] .bg-\[\#124233\] {
+    background-color: #faf1df !important;
+    color: #2d1f05 !important;
+}
+
+body[data-theme="golden-harvest"] .bg-\[\#1a4d3e\] {
+    background-color: #b37b0d !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="golden-harvest"] .border-\[\#2d5848\],
+body[data-theme="golden-harvest"] .border-\[\#1b4e3e\] {
+    border-color: #e2cca2 !important;
+}
+
+body[data-theme="golden-harvest"] .text-\[\#e2d5b6\] {
+    color: #5c4416 !important;
+}
+
+body[data-theme="golden-harvest"] .text-\[\#d4af37\] {
+    color: #b37b0d !important;
+}
+
+body[data-theme="golden-harvest"] .bg-\[\#d4af37\] {
+    background-color: #b37b0d !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="golden-harvest"] .text-white {
+    color: #2d1f05 !important;
+}

@@ -50,6 +50,7 @@ export default function App() {
 
   useEffect(() => {
     document.body.setAttribute('data-theme', currentTheme);
+    console.log(currentTheme);
     try {
       localStorage.setItem('mourya_selected_theme', currentTheme);
     } catch (e) {
@@ -138,7 +139,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#f9f5eb] text-[#1b3028] font-sans flex flex-col relative selection:bg-[#d4af37] selection:text-[#0c382b]">
-
       {/* Toast Notification Badge */}
       {toastMessage && (
         <div className="fixed bottom-20 right-4 z-50 bg-[#0c382b] text-[#d4af37] border-2 border-[#d4af37] px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-slideUp font-bold text-xs">
@@ -165,7 +165,6 @@ export default function App() {
 
       {/* Main Page Layout Content based on Active Tab */}
       <main className="flex-1">
-
         {activeTab === 'home' && (
           <>
             <Hero
@@ -181,42 +180,41 @@ export default function App() {
               onOpenBuildBox={() => setIsBuildBoxOpen(true)}
               onOpenQuiz={() => setIsQuizOpen(true)}
             />
-            <BackgroundColorBar
+            {/* <BackgroundColorBar
               currentTheme={currentTheme}
               onSelectTheme={setCurrentTheme}
               setIsThemeModalOpen={setIsThemeModalOpen}
-            />
-            <AboutSection />
+            /> */}
             <ProductsSection
               onAddToCart={handleAddToCart}
               onInstantBuy={handleInstantBuy}
               searchTerm={searchQuery}
             />
-            <PackagingShowcase />
-            <BrandLogoShowcase />
-            <AdCampaignGallery setActiveTab={setActiveTab} />
-            <BiharJourney />
             <NutritionSection />
+            <PackagingShowcase />
+            {/* <BrandLogoShowcase /> */}
+            {/* <AdCampaignGallery setActiveTab={setActiveTab} /> */}
+            <BiharJourney />
             <WhyChooseUs />
             <QualitySafety />
-            <OnlineMarketplaces setActiveTab={setActiveTab} />
+            {/* <OnlineMarketplaces setActiveTab={setActiveTab} /> */}
             <WholesaleSection />
             <ExportSection />
-            <TestimonialsSection />
+            {/* <TestimonialsSection /> */}
             <FAQSection setActiveTab={setActiveTab} />
             <BlogSection />
-            <ContactSection />
+            {/* <ContactSection /> */}
           </>
         )}
 
         {activeTab === 'products' && (
-          <div className="py-2">
-            <CategoryCircleNav
+          <div>
+            {/* <CategoryCircleNav
               selectedCategory={selectedCategory}
               onSelectCategory={setSelectedCategory}
-              onOpenBuildBox={() => setIsBuildBoxOpen(true)}
-              onOpenQuiz={() => setIsQuizOpen(true)}
-            />
+              // onOpenBuildBox={() => setIsBuildBoxOpen(true)}
+              // onOpenQuiz={() => setIsQuizOpen(true)}
+            /> */}
             <ProductsSection
               onAddToCart={handleAddToCart}
               onInstantBuy={handleInstantBuy}
@@ -226,21 +224,21 @@ export default function App() {
         )}
 
         {activeTab === 'pack-design' && (
-          <div className="py-2">
+          <div className="">
             <PackagingShowcase />
             <BrandLogoShowcase />
           </div>
         )}
 
         {activeTab === 'brand-logo' && (
-          <div className="py-2">
+          <div className="">
             <BrandLogoShowcase />
             <PackagingShowcase />
           </div>
         )}
 
         {activeTab === 'ad-campaigns' && (
-          <div className="py-2">
+          <div className="">
             <AdCampaignGallery setActiveTab={setActiveTab} />
           </div>
         )}
@@ -252,21 +250,21 @@ export default function App() {
         )}
 
         {activeTab === 'journey' && (
-          <div className="py-10">
+          <div className="">
             <BiharJourney />
             <AboutSection />
           </div>
         )}
 
         {activeTab === 'wholesale' && (
-          <div className="py-10">
+          <div className="">
             <WholesaleSection />
             <QualitySafety />
           </div>
         )}
 
         {activeTab === 'export' && (
-          <div className="py-10">
+          <div className="">
             <ExportSection />
             <QualitySafety />
           </div>
@@ -284,7 +282,7 @@ export default function App() {
           </div>
         )}
 
-        {(activeTab === 'themes' || activeTab === 'background-colors') && (
+        {/* {(activeTab === 'themes' || activeTab === 'background-colors') && (
           <div className="py-10 max-w-7xl mx-auto px-4">
             <BackgroundColorBar
               currentTheme={currentTheme}
@@ -292,14 +290,13 @@ export default function App() {
               setIsThemeModalOpen={setIsThemeModalOpen}
             />
           </div>
-        )}
+        )} */}
 
         {activeTab === 'contact' && (
-          <div className="py-10">
+          <div className="">
             <ContactSection />
           </div>
         )}
-
       </main>
 
       {/* Footer Navigation & Legal */}
@@ -314,7 +311,7 @@ export default function App() {
         <ScrollToTopButton />
 
         {/* Physical Pouch QR Floating Trigger */}
-        <button
+        {<button
           onClick={() => setIsQRModalOpen(true)}
           className="bg-[#0c382b] text-[#d4af37] border-2 border-[#d4af37] p-3 rounded-full shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center"
           title="Scan Physical Pouch QR Code"
@@ -324,10 +321,10 @@ export default function App() {
           <span className="absolute right-14 bg-[#0c382b] text-[#d4af37] text-[10px] font-bold px-2.5 py-1 rounded-lg border border-[#d4af37] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
             Physical Pouch QR Code
           </span>
-        </button>
+        </button>}
 
         {/* Floating Theme Switcher Button */}
-        <button
+        {<button
           onClick={() => setIsThemeModalOpen(true)}
           className="bg-[#d4af37] hover:bg-[#e2bd44] text-[#0c382b] p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border-2 border-white group relative"
           title="Change Website Color Theme"
@@ -338,7 +335,7 @@ export default function App() {
             Customize Website Color Theme
           </span>
         </button>
-
+        }
         {/* Floating WhatsApp Quick Chat */}
         <a
           href="https://wa.me/919137738436?text=Hello%20MOURYA%20FOODS%20Team%2C%20I%20would%20like%20to%20order%20Makhana."
@@ -356,10 +353,10 @@ export default function App() {
       </div>
 
       {/* AI Assistant Chatbot Component */}
-      <Chatbot
+      {<Chatbot
         onInstantBuy={handleInstantBuy}
         setActiveTab={setActiveTab}
-      />
+      />}
 
       {/* Instant Delivery Details Checkout Modal */}
       <ExpressCheckoutModal
@@ -413,11 +410,11 @@ export default function App() {
       />
 
       {/* Snack Finder Quiz Modal */}
-      <SnackFinderQuizModal
+      {/* <SnackFinderQuizModal
         isOpen={isQuizOpen}
         onClose={() => setIsQuizOpen(false)}
         onAddToCart={handleAddToCart}
-      />
+      /> */}
 
       {/* Quick View Product Modal */}
       {quickViewProduct && (
@@ -499,7 +496,6 @@ export default function App() {
           </div>
         </div>
       )}
-
     </div>
   );
 }

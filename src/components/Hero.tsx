@@ -6,14 +6,12 @@ import {
   Package,
   PhoneCall,
   Sparkles,
-  ShieldCheck,
   Award,
   ArrowRight,
   Flame,
   Leaf,
   CheckCircle2,
   QrCode,
-  RotateCw
 } from 'lucide-react';
 
 interface HeroProps {
@@ -27,23 +25,16 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
     { size: '100g', label: 'Handy Pouch', sku: 'MF-100', highlight: false },
     { size: '200g', label: 'Eco Pack', sku: 'MF-200', highlight: false },
     { size: '250g', label: 'Family Pack', sku: 'MF-250', highlight: true },
-    { size: '500g', label: 'Jumbo Pack', sku: 'MF-500', highlight: false },
-    { size: '1kg', label: 'Bulk Saver', sku: 'MF-1000', highlight: true },
+    // { size: '500g', label: 'Jumbo Pack', sku: 'MF-500', highlight: false },
+    // { size: '1kg', label: 'Bulk Saver', sku: 'MF-1000', highlight: true },
   ];
 
   return (
-    <section className="relative bg-mourya-pouch-pattern bg-lotus-watermark text-[#fcf8f2] overflow-hidden py-12 md:py-20 lg:py-24 border-b border-[#1b4e3e]">
-
-      {/* Background Decorative Gold Ring & Lotus Watermark Accents */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full border-[30px] border-[#d4af37]/10 blur-xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full border-[20px] border-[#d4af37]/10 blur-xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative bg-mourya-pouch-pattern bg-lotus-watermark text-[#fcf8f2] py-10 border-b border-[#1b4e3e] bg-[#0c382b]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
           {/* Left Column: Brand Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-
             {/* Top Pill Tagline */}
             <div className="inline-flex items-center gap-2 bg-[#1a4d3e]/90 border border-[#d4af37]/40 px-4 py-1.5 rounded-full text-xs font-semibold text-[#d4af37] shadow-inner">
               <Sparkles className="w-4 h-4 text-[#d4af37] animate-spin" style={{ animationDuration: '6s' }} />
@@ -80,16 +71,16 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
 
             {/* Suvria-Style Key Health Micro-Badges */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 text-xs">
-              <span className="bg-suvria-terracotta text-white font-extrabold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+              <span className="bg-suvria-terracotta text-white font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
                 🌿 Low GI 35
               </span>
-              <span className="bg-[#124233] text-amber-200 font-extrabold px-3 py-1 rounded-full border border-[#d4af37]/40 flex items-center gap-1">
+              <span className="bg-[#124233] text-amber-200 font-semibold px-3 py-1 rounded-full border border-[#d4af37]/40 flex items-center gap-1">
                 💪 9g Plant Protein
               </span>
-              <span className="bg-[#124233] text-emerald-300 font-extrabold px-3 py-1 rounded-full border border-[#2d5848] flex items-center gap-1">
+              <span className="bg-[#124233] text-emerald-300 font-semibold px-3 py-1 rounded-full border border-[#2d5848] flex items-center gap-1">
                 ⚡ 60% Less Cal. vs Chips
               </span>
-              <span className="bg-[#124233] text-amber-300 font-extrabold px-3 py-1 rounded-full border border-[#2d5848] flex items-center gap-1">
+              <span className="bg-[#124233] text-amber-300 font-semibold px-3 py-1 rounded-full border border-[#2d5848] flex items-center gap-1">
                 ⚡ 10-Min Delivery Ready
               </span>
             </div>
@@ -114,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
                 id="hero-shop-now-btn"
               >
                 <ShoppingBag className="w-5 h-5 text-[#0c382b]" />
-                <span>🛒 Shop Now</span>
+                <span>Shop Now</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -127,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
                 id="hero-bulk-enquiry-btn"
               >
                 <Package className="w-5 h-5 text-[#d4af37]" />
-                <span>📦 Bulk/Wholesale Enquiry</span>
+                <span> Bulk/Wholesale Enquiry</span>
               </button>
 
               <button
@@ -139,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
                 id="hero-contact-us-btn"
               >
                 <PhoneCall className="w-4 h-4 text-[#d4af37]" />
-                <span>📞 Contact Us</span>
+                <span> Contact Us</span>
               </button>
             </div>
 
@@ -157,12 +148,12 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
                       window.scrollTo({ top: 500, behavior: 'smooth' });
                     }}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${pack.highlight
-                        ? 'bg-[#d4af37] text-[#0c382b] shadow-md ring-2 ring-amber-300'
-                        : 'bg-[#124233] text-[#e2d5b6] border border-[#2d5848] hover:border-[#d4af37]'
+                      ? 'bg-[#d4af37] text-[#0c382b] shadow-md ring-2 ring-amber-300'
+                      : 'bg-[#124233] text-[#e2d5b6] border border-[#2d5848] hover:border-[#d4af37]'
                       }`}
                   >
                     <span>{pack.size}</span>
-                    <span className="text-[10px] opacity-75 font-normal">({pack.label})</span>
+                    <span className="text-[10px] font-medium">({pack.label})</span>
                   </button>
                 ))}
               </div>
@@ -173,7 +164,6 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab, setIsQRModalOpen }) =>
           {/* Right Column: Interactive Standup Pouch (Front & Back Label View) */}
           <div className="lg:col-span-5 relative flex flex-col items-center">
             <div className="relative mx-auto w-full max-w-md lg:max-w-none space-y-4">
-
               {/* Official Interactive Standup Pouch Container */}
               <div className="relative bg-gradient-to-b from-[#124233] to-[#08291f] p-4 sm:p-6 rounded-3xl border-2 border-[#d4af37]/40 shadow-2xl overflow-hidden">
                 <div className="flex items-center justify-between pb-3 border-b border-[#2d5848] mb-4 text-xs font-bold text-amber-200">

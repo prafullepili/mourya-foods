@@ -1,0 +1,39 @@
+body[data-theme="copper-terracotta"] {
+  background-color: #26120b !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="copper-terracotta"] .bg-\[\#07241b\] {
+  background-color: #26120b !important;
+}
+
+body[data-theme="copper-terracotta"] .bg-\[\#0c382b\] {
+  background-color: #3d1c11 !important;
+}
+
+body[data-theme="copper-terracotta"] .bg-\[\#124233\] {
+  background-color: #522617 !important;
+}
+
+body[data-theme="copper-terracotta"] .bg-\[\#1a4d3e\] {
+  background-color: #e06a3b !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="copper-terracotta"] .border-\[\#2d5848\],
+body[data-theme="copper-terracotta"] .border-\[\#1b4e3e\] {
+  border-color: #733722 !important;
+}
+
+body[data-theme="copper-terracotta"] .text-\[\#e2d5b6\] {
+  color: #f5d3c4 !important;
+}
+
+body[data-theme="copper-terracotta"] .text-\[\#d4af37\] {
+  color: #e06a3b !important;
+}
+
+body[data-theme="copper-terracotta"] .bg-\[\#d4af37\] {
+  background-color: #e06a3b !important;
+  color: #ffffff !important;
+}

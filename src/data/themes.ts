@@ -1,6 +1,16 @@
 import { ThemeOption } from '../types';
 
 export const THEMES: ThemeOption[] = [
+   {
+    id: 'emerald-gold',
+    name: 'Mithila Emerald & Gold',
+    subtitle: 'Signature Royal Dark Green',
+    bgPreview: '#07241b',
+    cardPreview: '#0c382b',
+    accentPreview: '#d4af37',
+    textPreview: '#ffffff',
+    isDark: true,
+  },
   {
     id: 'suvria-organic',
     name: 'Suvria Natural Almond & Green',
@@ -10,16 +20,6 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#d95328',
     textPreview: '#082c21',
     isDark: false,
-  },
-  {
-    id: 'emerald-gold',
-    name: 'Mithila Emerald & Gold',
-    subtitle: 'Signature Royal Dark Green',
-    bgPreview: '#07241b',
-    cardPreview: '#0c382b',
-    accentPreview: '#d4af37',
-    textPreview: '#ffffff',
-    isDark: true,
   },
   {
     id: 'organic-light',

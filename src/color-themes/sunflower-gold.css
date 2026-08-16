@@ -1,0 +1,47 @@
+
+body[data-theme="sunflower-gold"] {
+  background-color: #fffbeb !important;
+  color: #1e1b4b !important;
+}
+
+body[data-theme="sunflower-gold"] .bg-\[\#07241b\] {
+  background-color: #fef3c7 !important;
+  color: #1e1b4b !important;
+}
+
+body[data-theme="sunflower-gold"] .bg-\[\#0c382b\] {
+  background-color: #ffffff !important;
+  color: #1e1b4b !important;
+}
+
+body[data-theme="sunflower-gold"] .bg-\[\#124233\] {
+  background-color: #fde68a !important;
+  color: #1e1b4b !important;
+}
+
+body[data-theme="sunflower-gold"] .bg-\[\#1a4d3e\] {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="sunflower-gold"] .border-\[\#2d5848\],
+body[data-theme="sunflower-gold"] .border-\[\#1b4e3e\] {
+  border-color: #fcd34d !important;
+}
+
+body[data-theme="sunflower-gold"] .text-\[\#e2d5b6\] {
+  color: #78350f !important;
+}
+
+body[data-theme="sunflower-gold"] .text-\[\#d4af37\] {
+  color: #d97706 !important;
+}
+
+body[data-theme="sunflower-gold"] .bg-\[\#d4af37\] {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="sunflower-gold"] .text-white {
+  color: #1e1b4b !important;
+}

@@ -22,15 +22,15 @@ export const ExportSection: React.FC = () => {
   ];
 
   return (
-    <section id="export" className="py-16 md:py-24 bg-[#07241b] text-[#fcf8f2] font-sans relative border-t border-b border-[#1b4e3e]">
+    <section id="export" className="py-10 md:py-10 bg-[#07241b] text-[#fcf8f2] font-sans relative border-t border-b border-[#1b4e3e]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 space-y-3">
           <span className="text-[#d4af37] bg-[#1a4d3e] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#d4af37]/30">
             Global Trade & Container Shipping
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="font-serif text-3xl sm:text-4xl pt-2 lg:text-5xl font-bold text-white">
             Export Enquiries
           </h2>
           <p className="font-serif italic text-xl text-[#d4af37]">

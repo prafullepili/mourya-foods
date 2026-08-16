@@ -1,0 +1,38 @@
+body[data-theme="ruby-lotus"] {
+  background-color: #1c0512 !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="ruby-lotus"] .bg-\[\#07241b\] {
+  background-color: #1c0512 !important;
+}
+
+body[data-theme="ruby-lotus"] .bg-\[\#0c382b\] {
+  background-color: #2b0c1e !important;
+}
+
+body[data-theme="ruby-lotus"] .bg-\[\#124233\] {
+  background-color: #3a152d !important;
+}
+
+body[data-theme="ruby-lotus"] .bg-\[\#1a4d3e\] {
+  background-color: #4d1d3d !important;
+}
+
+body[data-theme="ruby-lotus"] .border-\[\#2d5848\],
+body[data-theme="ruby-lotus"] .border-\[\#1b4e3e\] {
+  border-color: #632b50 !important;
+}
+
+body[data-theme="ruby-lotus"] .text-\[\#e2d5b6\] {
+  color: #f7d2e6 !important;
+}
+
+body[data-theme="ruby-lotus"] .text-\[\#d4af37\] {
+  color: #f5b236 !important;
+}
+
+body[data-theme="ruby-lotus"] .bg-\[\#d4af37\] {
+  background-color: #f5b236 !important;
+  color: #1c0512 !important;
+}

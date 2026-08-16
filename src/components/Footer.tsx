@@ -18,6 +18,7 @@ import {
   Share2
 } from 'lucide-react';
 import { SocialLinktreeCard } from './SocialLinktreeCard';
+import { label } from 'motion/react-client';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -120,7 +121,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenPolicy }) =>
                 { id: 'journey', label: 'From Bihar to Your Home' },
                 { id: 'quality', label: 'Quality & Safety' },
                 { id: 'faq', label: 'Frequently Asked Questions (FAQ)' },
-                { id: 'blog', label: 'Makhana Health Blog' }
+                { id: 'blog', label: 'Makhana Health Blog' },
+                { id: 'pack-design', label: 'Pack Design', badge: '100g Spec' },
+
               ].map((link) => (
                 <li key={link.id}>
                   <button

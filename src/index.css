@@ -1,6 +1,17 @@
 @import "tailwindcss";
+@import "./color-themes/emerald-gold.css";
+@import "./color-themes/suvria-organic.css";
+@import "./color-themes/copper-terracotta.css";
+@import "./color-themes/golden-harvest.css";
+@import "./color-themes/midnight-obsidian.css";
+@import "./color-themes/organic-light.css";
+@import "./color-themes/plum-violet.css";
+@import "./color-themes/pure-minimal-white.css";
+@import "./color-themes/ruby-lotus.css";
+@import "./color-themes/saffron-sunset.css";
+@import "./color-themes/sunflower-gold.css";
+@import "./color-themes/teal-peacock.css";
 
-/* BASE THEME STYLES & DYNAMIC COLOR THEME ENGINE */
 :root {
   --bg-primary: #07241b;
   --bg-secondary: #0c382b;
@@ -12,208 +23,13 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background-color: #07241b;
   color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 1. EMERALD GOLD (DEFAULT SIGNATURE DARK GREEN) */
-body[data-theme="emerald-gold"], body:not([data-theme]) {
-  background-color: #07241b;
-  color: #ffffff;
-}
-
-/* 2. FRESH ORGANIC LIGHT MODE */
-body[data-theme="organic-light"] {
-  background-color: #f2f7f4 !important;
-  color: #092017 !important;
-}
-
-body[data-theme="organic-light"] .bg-\[\#07241b\] {
-  background-color: #e5f0ea !important;
-  color: #092017 !important;
-}
-
-body[data-theme="organic-light"] .bg-\[\#0c382b\] {
-  background-color: #ffffff !important;
-  color: #092017 !important;
-}
-
-body[data-theme="organic-light"] .bg-\[\#124233\] {
-  background-color: #f0f7f3 !important;
-  color: #092017 !important;
-}
-
-body[data-theme="organic-light"] .bg-\[\#1a4d3e\] {
-  background-color: #0d633e !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="organic-light"] .border-\[\#2d5848\],
-body[data-theme="organic-light"] .border-\[\#1b4e3e\] {
-  border-color: #b8d4c4 !important;
-}
-
-body[data-theme="organic-light"] .text-[#e2d5b6] {
-  color: #214234 !important;
-}
-
-body[data-theme="organic-light"] .text-[#d4af37] {
-  color: #0d633e !important;
-}
-
-body[data-theme="organic-light"] .bg-\[\#d4af37\] {
-  background-color: #0d633e !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="organic-light"] .fill-\[\#0c382b\] {
-  fill: #ffffff !important;
-}
-
-body[data-theme="organic-light"] .text-white {
-  color: #092017 !important;
-}
-
-/* 3. GOLDEN HARVEST CREAM */
-body[data-theme="golden-harvest"] {
-  background-color: #fbf6ec !important;
-  color: #2d1f05 !important;
-}
-
-body[data-theme="golden-harvest"] .bg-\[\#07241b\] {
-  background-color: #f4e8d3 !important;
-  color: #2d1f05 !important;
-}
-
-body[data-theme="golden-harvest"] .bg-\[\#0c382b\] {
-  background-color: #ffffff !important;
-  color: #2d1f05 !important;
-}
-
-body[data-theme="golden-harvest"] .bg-\[\#124233\] {
-  background-color: #faf1df !important;
-  color: #2d1f05 !important;
-}
-
-body[data-theme="golden-harvest"] .bg-\[\#1a4d3e\] {
-  background-color: #b37b0d !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="golden-harvest"] .border-\[\#2d5848\],
-body[data-theme="golden-harvest"] .border-\[\#1b4e3e\] {
-  border-color: #e2cca2 !important;
-}
-
-body[data-theme="golden-harvest"] .text-[#e2d5b6] {
-  color: #5c4416 !important;
-}
-
-body[data-theme="golden-harvest"] .text-[#d4af37] {
-  color: #b37b0d !important;
-}
-
-body[data-theme="golden-harvest"] .bg-\[\#d4af37\] {
-  background-color: #b37b0d !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="golden-harvest"] .text-white {
-  color: #2d1f05 !important;
-}
-
-/* 4. MIDNIGHT SAPPHIRE DARK */
-body[data-theme="midnight-obsidian"] {
-  background-color: #0a0f1d !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="midnight-obsidian"] .bg-\[\#07241b\] {
-  background-color: #0a0f1d !important;
-}
-
-body[data-theme="midnight-obsidian"] .bg-\[\#0c382b\] {
-  background-color: #121a2d !important;
-}
-
-body[data-theme="midnight-obsidian"] .bg-\[\#124233\] {
-  background-color: #1a253e !important;
-}
-
-body[data-theme="midnight-obsidian"] .bg-\[\#1a4d3e\] {
-  background-color: #233150 !important;
-}
-
-body[data-theme="midnight-obsidian"] .border-\[\#2d5848\],
-body[data-theme="midnight-obsidian"] .border-\[\#1b4e3e\] {
-  border-color: #2e3e63 !important;
-}
-
-body[data-theme="midnight-obsidian"] .text-[#e2d5b6] {
-  color: #cbd5e1 !important;
-}
-
-body[data-theme="midnight-obsidian"] .text-[#d4af37] {
-  color: #e5b839 !important;
-}
-
-body[data-theme="midnight-obsidian"] .bg-\[\#d4af37\] {
-  background-color: #e5b839 !important;
-  color: #0a0f1d !important;
-}
-
-/* 5. SUVRIA NATURAL ORGANIC ALMOND & PINE GREEN */
-body[data-theme="suvria-organic"] {
-  background-color: #f8f5eb !important;
-  color: #082c21 !important;
-}
-
-body[data-theme="suvria-organic"] .bg-\[\#07241b\] {
-  background-color: #082c21 !important;
-  color: #fbf8f0 !important;
-}
-
-body[data-theme="suvria-organic"] .bg-\[\#07241b\] .text-[#e2d5b6] {
-  color: #d8c292 !important;
-}
-
-body[data-theme="suvria-organic"] .bg-\[\#0c382b\] {
-  background-color: #ffffff !important;
-  color: #082c21 !important;
-  border-color: #ebdcb9 !important;
-}
-
-body[data-theme="suvria-organic"] .bg-\[\#124233\] {
-  background-color: #f4efe2 !important;
-  color: #082c21 !important;
-}
-
-body[data-theme="suvria-organic"] .bg-\[\#1a4d3e\] {
-  background-color: #d95328 !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="suvria-organic"] .border-\[\#2d5848\],
-body[data-theme="suvria-organic"] .border-\[\#1b4e3e\] {
-  border-color: #e5dac1 !important;
-}
-
-body[data-theme="suvria-organic"] .text-[#e2d5b6] {
-  color: #4a3819 !important;
-}
-
-body[data-theme="suvria-organic"] .text-[#d4af37] {
-  color: #d95328 !important;
-}
-
-body[data-theme="suvria-organic"] .bg-\[\#d4af37\] {
-  background-color: #d95328 !important;
-  color: #ffffff !important;
-}
-
-/* Ensure buttons with explicit bg-suvria-terracotta or bg-emerald-800 retain white text */
 .bg-suvria-terracotta,
 .bg-emerald-800,
 .bg-emerald-700,
@@ -222,7 +38,6 @@ a.bg-suvria-terracotta {
   color: #ffffff !important;
 }
 
-/* SUVRIA BRANDED UTILITY CLASSES */
 .bg-suvria-terracotta {
   background-color: #d95328;
 }
@@ -239,17 +54,16 @@ a.bg-suvria-terracotta {
   border-color: #d4af37;
 }
 
-/* PROFESSIONAL BACKGROUND PATTERNS & MOURYA POUCH WATERMARKS */
 .bg-mourya-pouch-pattern {
-  background-image: 
+  background-image:
     radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 65%),
     radial-gradient(circle at 100% 100%, rgba(217, 83, 40, 0.08) 0%, transparent 50%),
     linear-gradient(to bottom, rgba(5, 27, 20, 0.97), rgba(12, 56, 43, 0.99));
 }
-
-.bg-[#07241b] {
+/* 
+.bg-\[\#07241b\] {
   background-image: radial-gradient(circle at 20% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 40%), linear-gradient(to bottom, #051a13, #082c21);
-}
+} */
 
 .bg-lotus-watermark {
   background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 15 C52 30 35 40 35 57 C35 70 45 80 60 80 C75 80 85 70 85 57 C85 40 68 30 60 15 Z' fill='%23d4af37' fill-opacity='0.035'/%3E%3C/svg%3E");
@@ -261,7 +75,6 @@ a.bg-suvria-terracotta {
   color: #07241b;
 }
 
-/* PROFESSIONAL CARD & SHADOW STYLING */
 .pro-card-shadow {
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2), 0 4px 10px -2px rgba(0, 0, 0, 0.1);
 }
@@ -271,133 +84,3 @@ a.bg-suvria-terracotta {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(212, 175, 55, 0.25);
 }
-body[data-theme="ruby-lotus"] {
-  background-color: #1c0512 !important;
-  color: #ffffff !important;
-}
-
-body[data-theme="ruby-lotus"] .bg-\[\#07241b\] {
-  background-color: #1c0512 !important;
-}
-
-body[data-theme="ruby-lotus"] .bg-\[\#0c382b\] {
-  background-color: #2b0c1e !important;
-}
-
-body[data-theme="ruby-lotus"] .bg-\[\#124233\] {
-  background-color: #3a152d !important;
-}
-
-body[data-theme="ruby-lotus"] .bg-\[\#1a4d3e\] {
-  background-color: #4d1d3d !important;
-}
-
-body[data-theme="ruby-lotus"] .border-\[\#2d5848\],
-body[data-theme="ruby-lotus"] .border-\[\#1b4e3e\] {
-  border-color: #632b50 !important;
-}
-
-body[data-theme="ruby-lotus"] .text-[#e2d5b6] {
-  color: #f7d2e6 !important;
-}
-
-body[data-theme="ruby-lotus"] .text-[#d4af37] {
-  color: #f5b236 !important;
-}
-
-body[data-theme="ruby-lotus"] .bg-\[\#d4af37\] {
-  background-color: #f5b236 !important;
-  color: #1c0512 !important;
-}
-
-/* 7. SPICED COPPER & CLAY */
-body[data-theme="copper-terracotta"] {
-  background-color: #26120b !important;
-  color: #ffffff !important;
-}
-body[data-theme="copper-terracotta"] .bg-\[\#07241b\] { background-color: #26120b !important; }
-body[data-theme="copper-terracotta"] .bg-\[\#0c382b\] { background-color: #3d1c11 !important; }
-body[data-theme="copper-terracotta"] .bg-\[\#124233\] { background-color: #522617 !important; }
-body[data-theme="copper-terracotta"] .bg-\[\#1a4d3e\] { background-color: #e06a3b !important; color: #ffffff !important; }
-body[data-theme="copper-terracotta"] .border-\[\#2d5848\],
-body[data-theme="copper-terracotta"] .border-\[\#1b4e3e\] { border-color: #733722 !important; }
-body[data-theme="copper-terracotta"] .text-[#e2d5b6] { color: #f5d3c4 !important; }
-body[data-theme="copper-terracotta"] .text-[#d4af37] { color: #e06a3b !important; }
-body[data-theme="copper-terracotta"] .bg-\[\#d4af37\] { background-color: #e06a3b !important; color: #ffffff !important; }
-
-/* 8. ROYAL PEACOCK TEAL */
-body[data-theme="teal-peacock"] {
-  background-color: #082126 !important;
-  color: #ffffff !important;
-}
-body[data-theme="teal-peacock"] .bg-\[\#07241b\] { background-color: #082126 !important; }
-body[data-theme="teal-peacock"] .bg-\[\#0c382b\] { background-color: #0e343c !important; }
-body[data-theme="teal-peacock"] .bg-\[\#124233\] { background-color: #154650 !important; }
-body[data-theme="teal-peacock"] .bg-\[\#1a4d3e\] { background-color: #0284c7 !important; color: #ffffff !important; }
-body[data-theme="teal-peacock"] .border-\[\#2d5848\],
-body[data-theme="teal-peacock"] .border-\[\#1b4e3e\] { border-color: #1e5a67 !important; }
-body[data-theme="teal-peacock"] .text-[#e2d5b6] { color: #bae6fd !important; }
-body[data-theme="teal-peacock"] .text-[#d4af37] { color: #38bdf8 !important; }
-body[data-theme="teal-peacock"] .bg-\[\#d4af37\] { background-color: #38bdf8 !important; color: #082126 !important; }
-
-/* 9. SUNFLOWER HALDI GOLD */
-body[data-theme="sunflower-gold"] {
-  background-color: #fffbeb !important;
-  color: #1e1b4b !important;
-}
-body[data-theme="sunflower-gold"] .bg-\[\#07241b\] { background-color: #fef3c7 !important; color: #1e1b4b !important; }
-body[data-theme="sunflower-gold"] .bg-\[\#0c382b\] { background-color: #ffffff !important; color: #1e1b4b !important; }
-body[data-theme="sunflower-gold"] .bg-\[\#124233\] { background-color: #fde68a !important; color: #1e1b4b !important; }
-body[data-theme="sunflower-gold"] .bg-\[\#1a4d3e\] { background-color: #d97706 !important; color: #ffffff !important; }
-body[data-theme="sunflower-gold"] .border-\[\#2d5848\],
-body[data-theme="sunflower-gold"] .border-\[\#1b4e3e\] { border-color: #fcd34d !important; }
-body[data-theme="sunflower-gold"] .text-[#e2d5b6] { color: #78350f !important; }
-body[data-theme="sunflower-gold"] .text-[#d4af37] { color: #d97706 !important; }
-body[data-theme="sunflower-gold"] .bg-\[\#d4af37\] { background-color: #d97706 !important; color: #ffffff !important; }
-body[data-theme="sunflower-gold"] .text-white { color: #1e1b4b !important; }
-
-/* 10. SAFFRON ROYAL ORANGE */
-body[data-theme="saffron-sunset"] {
-  background-color: #2a0e08 !important;
-  color: #ffffff !important;
-}
-body[data-theme="saffron-sunset"] .bg-\[\#07241b\] { background-color: #2a0e08 !important; }
-body[data-theme="saffron-sunset"] .bg-\[\#0c382b\] { background-color: #42170d !important; }
-body[data-theme="saffron-sunset"] .bg-\[\#124233\] { background-color: #5c2113 !important; }
-body[data-theme="saffron-sunset"] .bg-\[\#1a4d3e\] { background-color: #f97316 !important; color: #ffffff !important; }
-body[data-theme="saffron-sunset"] .border-\[\#2d5848\],
-body[data-theme="saffron-sunset"] .border-\[\#1b4e3e\] { border-color: #7c2d12 !important; }
-body[data-theme="saffron-sunset"] .text-[#e2d5b6] { color: #fed7aa !important; }
-body[data-theme="saffron-sunset"] .text-[#d4af37] { color: #f97316 !important; }
-body[data-theme="saffron-sunset"] .bg-\[\#d4af37\] { background-color: #f97316 !important; color: #ffffff !important; }
-
-/* 11. ROYAL PLUM VELVET */
-body[data-theme="plum-violet"] {
-  background-color: #1a092b !important;
-  color: #ffffff !important;
-}
-body[data-theme="plum-violet"] .bg-\[\#07241b\] { background-color: #1a092b !important; }
-body[data-theme="plum-violet"] .bg-\[\#0c382b\] { background-color: #2a1142 !important; }
-body[data-theme="plum-violet"] .bg-\[\#124233\] { background-color: #3b195c !important; }
-body[data-theme="plum-violet"] .bg-\[\#1a4d3e\] { background-color: #9333ea !important; color: #ffffff !important; }
-body[data-theme="plum-violet"] .border-\[\#2d5848\],
-body[data-theme="plum-violet"] .border-\[\#1b4e3e\] { border-color: #581c87 !important; }
-body[data-theme="plum-violet"] .text-[#e2d5b6] { color: #e9d5ff !important; }
-body[data-theme="plum-violet"] .text-[#d4af37] { color: #c084fc !important; }
-body[data-theme="plum-violet"] .bg-\[\#d4af37\] { background-color: #c084fc !important; color: #1a092b !important; }
-
-/* 12. PURE IVORY MINIMAL */
-body[data-theme="pure-minimal-white"] {
-  background-color: #f8fafc !important;
-  color: #0f172a !important;
-}
-body[data-theme="pure-minimal-white"] .bg-\[\#07241b\] { background-color: #f1f5f9 !important; color: #0f172a !important; }
-body[data-theme="pure-minimal-white"] .bg-\[\#0c382b\] { background-color: #ffffff !important; color: #0f172a !important; }
-body[data-theme="pure-minimal-white"] .bg-\[\#124233\] { background-color: #f8fafc !important; color: #0f172a !important; }
-body[data-theme="pure-minimal-white"] .bg-\[\#1a4d3e\] { background-color: #0284c7 !important; color: #ffffff !important; }
-body[data-theme="pure-minimal-white"] .border-\[\#2d5848\],
-body[data-theme="pure-minimal-white"] .border-\[\#1b4e3e\] { border-color: #cbd5e1 !important; }
-body[data-theme="pure-minimal-white"] .text-[#e2d5b6] { color: #334155 !important; }
-body[data-theme="pure-minimal-white"] .text-[#d4af37] { color: #0284c7 !important; }
-body[data-theme="pure-minimal-white"] .bg-\[\#d4af37\] { background-color: #0284c7 !important; color: #ffffff !important; }
-body[data-theme="pure-minimal-white"] .text-white { color: #0f172a !important; }

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { MouryaLogo } from './MouryaLogo';
-import { 
-  ShoppingBag, 
-  Menu, 
-  X, 
-  Phone, 
-  Mail, 
-  Globe, 
-  QrCode, 
-  Search, 
-  Sparkles, 
-  Package, 
-  Building2, 
+import {
+  ShoppingBag,
+  Menu,
+  X,
+  Phone,
+  Mail,
+  Globe,
+  QrCode,
+  Search,
+  Sparkles,
+  Package,
+  Building2,
   FileText,
   Palette
 } from 'lucide-react';
@@ -41,26 +41,24 @@ export const Header: React.FC<HeaderProps> = ({
   onSelectTheme,
   onSearch,
 }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navLinks = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Us' },
     { id: 'products', label: 'Products' },
-    { id: 'pack-design', label: 'Pack Design', badge: '100g Spec' },
-    { id: 'brand-logo', label: 'Brand Logo', badge: 'Official' },
-    { id: 'ad-campaigns', label: 'Featured Ads', badge: 'Ads' },
-    { id: 'themes', label: '12 Color Themes', badge: '12 Colors' },
     { id: 'track', label: 'Track Order', badge: 'Live' },
-    { id: 'nutrition', label: 'Nutrition' },
-    { id: 'journey', label: 'Bihar Story' },
-    { id: 'wholesale', label: 'Bulk Wholesale', badge: 'B2B' },
     { id: 'export', label: 'Export' },
-    { id: 'faq', label: 'FAQ', badge: 'Help' },
-    { id: 'blog', label: 'Blog (SEO)' },
+    { id: 'about', label: 'About Us' },
     { id: 'contact', label: 'Contact Us' },
+    //  { id: 'brand-logo', label: 'Brand Logo', badge: 'Official' },
+    //     { id: 'ad-campaigns', label: 'Featured Ads', badge: 'Ads' },
+    //     { id: 'themes', label: '12 Color Themes', badge: '12 Colors' },
+    //     { id: 'nutrition', label: 'Nutrition' },
+    //     { id: 'journey', label: 'Bihar Story' },
+    //     { id: 'faq', label: 'FAQ', badge: 'Help' },
+    //     { id: 'blog', label: 'Blog (SEO)' },
   ];
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -72,47 +70,47 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 shadow-lg font-sans">
       {/* Top Announcement Bar */}
-      <div className="bg-[#07241b] text-[#e2d5b6] text-xs py-2 px-4 border-b border-[#2d5848]">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div className="bg-[#07241b] text-xs py-2 px-4 border-b border-[#2d5848]">
+        {/* <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2"> */}
+        <div className="mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-4 text-xs">
             <span className="flex items-center gap-1 font-medium text-[#d4af37]">
-              <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
+              <Sparkles className="w-3.5 h-3.5" />
               Premium Bihar Makhana • 100% Natural • FSSAI Certified
             </span>
             <span className="hidden md:inline text-emerald-400/50">|</span>
-            <span className="hidden md:inline text-[#e2d5b6]/80">GS1 Barcode Authorised (890 Prefix)</span>
+            <span className="hidden md:inline text-[#d4af37]">GS1 Barcode Authorised (890 Prefix)</span>
           </div>
 
           <div className="flex items-center gap-4 text-xs">
-            <a 
-              href="tel:+919137738436" 
-              className="flex items-center gap-1 hover:text-[#d4af37] transition-colors"
+            <a
+              href="tel:+919137738436"
+              className="flex items-center gap-1 text-[#d4af37]/90 hover:text-[#d4af37] transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#d4af37]" />
+              <Phone className="w-3 h-3 text-[#d4af37]/85 hover:text-[#d4af37]" />
               +91 9137738436
             </a>
-            <a 
-              href="mailto:mouryafoods18@gmail.com" 
-              className="hidden lg:flex items-center gap-1 hover:text-[#d4af37] transition-colors"
+            <a
+              href="mailto:mouryafoods18@gmail.com"
+              className="hidden lg:flex items-center gap-1 text-[#d4af37]/80 hover:text-[#d4af37]/100 transition-colors"
             >
-              <Mail className="w-3 h-3 text-[#d4af37]" />
+              <Mail className="w-3 h-3 text-[#d4af37]/85 hover:text-[#d4af37]" />
               mouryafoods18@gmail.com
             </a>
             {/* Quick 1-Click Color Themes Swatch Bar */}
             {onSelectTheme && (
               <div className="hidden sm:flex items-center gap-1 bg-[#0c382b] px-2 py-0.5 rounded-full border border-[#2d5848]" title="Quick Color Theme Swatch">
-                <Palette className="w-3 h-3 text-[#d4af37]" />
-                <span className="text-[10px] text-gray-300 font-bold mr-0.5">Theme:</span>
+                <Palette className="w-4 h-5 text-[#d4af37]" />
+                <span className="text-[10px] text-[#d4af37] font-bold mr-0.5">Theme:</span>
                 <div className="flex items-center gap-1">
                   {THEMES.map((th) => (
                     <button
                       key={th.id}
                       onClick={() => onSelectTheme(th.id)}
-                      className={`w-3.5 h-3.5 rounded-full border transition-all ${
-                        currentTheme === th.id
-                          ? 'border-white scale-125 ring-2 ring-[#d4af37]'
-                          : 'border-transparent opacity-80 hover:opacity-100 hover:scale-110'
-                      }`}
+                      className={`w-3.5 h-3.5 rounded-full border transition-all ${currentTheme === th.id
+                        ? 'border-white scale-125 ring-2 ring-[#d4af37]'
+                        : 'border-transparent opacity-80 hover:opacity-100 hover:scale-110'
+                        }`}
                       style={{ backgroundColor: th.accentPreview }}
                       title={`${th.name} (${th.subtitle})`}
                     />
@@ -124,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
             {setIsThemeModalOpen && (
               <button
                 onClick={() => setIsThemeModalOpen(true)}
-                className="flex items-center gap-1 bg-[#d4af37] text-[#0c382b] hover:bg-[#e2bd44] px-2.5 py-0.5 rounded-full font-extrabold text-[11px] transition-all shadow"
+                className="flex items-center gap-1 bg-[#d4af37] text-[#0c382b] hover:bg-[#e2bd44] px-2.5 py-0.5 rounded-full font-bold text-[11px] transition-all shadow"
                 id="header-theme-switcher-btn"
                 title="Open Theme Palette Switcher Modal"
               >
@@ -135,10 +133,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setIsQRModalOpen(true)}
-              className="flex items-center gap-1 bg-[#1a4d3e] hover:bg-[#235e4d] text-[#e2d5b6] px-2.5 py-0.5 rounded-full border border-[#d4af37]/40 text-[11px] font-medium transition-all"
+              className="flex items-center gap-1 bg-[#1a4d3e] hover:bg-[#235e4d] text-[#fff] px-2.5 py-0.5 rounded-full border border-[#d4af37]/40 text-[11px] font-medium transition-all"
               id="qr-pouch-scan-btn"
             >
-              <QrCode className="w-3 h-3 text-[#d4af37]" />
+              <QrCode className="w-3 h-3 text-[#fff]" />
               Scan Pouch QR
             </button>
           </div>
@@ -148,10 +146,9 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Main Navbar */}
       <div className="bg-[#0c382b] text-[#fcf8f2] border-b border-[#1b4e3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          
           {/* Brand Logo & Emblem */}
-          <button 
-            onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+          <button
+            onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="flex items-center text-left group focus:outline-none hover:opacity-95 transition-opacity"
             id="brand-logo-btn"
           >
@@ -167,13 +164,12 @@ export const Header: React.FC<HeaderProps> = ({
                   key={link.id}
                   onClick={() => {
                     setActiveTab(link.id);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all relative flex items-center gap-1.5 ${
-                    isActive 
-                      ? 'text-[#d4af37] bg-[#1a4d3e] shadow-sm font-semibold' 
-                      : 'text-[#fcf8f2]/90 hover:text-[#d4af37] hover:bg-[#124233]'
-                  }`}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium relative flex items-center gap-1.5 ${isActive
+                    ? 'text-[#d4af37] bg-[#1a4d3e] shadow-sm font-semibold'
+                    : 'text-[#fcf8f2]/90 hover:bg-[#1a4d3e]/90'
+                    }`}
                   id={`nav-link-${link.id}`}
                 >
                   {link.label}
@@ -192,7 +188,6 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Action Tools: Search, Bulk Quote CTA, Shopping Cart */}
           <div className="flex items-center gap-3">
-            
             {/* Search Toggle */}
             <div className="relative">
               {isSearchOpen ? (
@@ -205,8 +200,8 @@ export const Header: React.FC<HeaderProps> = ({
                     className="bg-[#124233] text-white text-xs px-3 py-1.5 rounded-l-md border border-[#2d5848] focus:outline-none focus:border-[#d4af37] w-36 sm:w-48"
                     autoFocus
                   />
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="bg-[#d4af37] text-[#0c382b] px-2.5 py-1.5 rounded-r-md text-xs font-bold hover:bg-[#e2bd44]"
                   >
                     Go
@@ -214,7 +209,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsSearchOpen(false)}
-                    className="ml-1 text-gray-300 hover:text-white p-1"
+                    className="ml-1 text-gray-500 p-1"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -222,7 +217,7 @@ export const Header: React.FC<HeaderProps> = ({
               ) : (
                 <button
                   onClick={() => setIsSearchOpen(true)}
-                  className="p-2 text-[#fcf8f2]/80 hover:text-[#d4af37] hover:bg-[#124233] rounded-full transition-colors"
+                  className="p-2 text-[#fcf8f2]/90 hover:text-[#d4af37] cursor-pointer rounded-full transition-colors"
                   title="Search Products"
                   id="header-search-btn"
                 >
@@ -232,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Quick Bulk Quote CTA */}
-            <button
+            {/* <button
               onClick={() => {
                 setActiveTab('wholesale');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -242,7 +237,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Building2 className="w-3.5 h-3.5" />
               <span>Wholesale Enquiry</span>
-            </button>
+            </button> */}
 
             {/* Cart Button */}
             <button
@@ -285,11 +280,10 @@ export const Header: React.FC<HeaderProps> = ({
                 setIsMobileMenuOpen(false);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium flex items-center justify-between ${
-                activeTab === link.id
-                  ? 'bg-[#1a4d3e] text-[#d4af37] font-bold border-l-4 border-[#d4af37]'
-                  : 'text-[#fcf8f2]/90 hover:bg-[#0c382b]'
-              }`}
+              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium flex items-center justify-between ${activeTab === link.id
+                ? 'bg-[#1a4d3e] text-[#d4af37] font-bold border-l-4 border-[#d4af37]'
+                : 'text-[#fcf8f2]/90 hover:bg-[#0c382b]'
+                }`}
             >
               <span>{link.label}</span>
               {link.badge && (

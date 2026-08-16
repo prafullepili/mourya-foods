@@ -1,0 +1,46 @@
+body[data-theme="pure-minimal-white"] {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+body[data-theme="pure-minimal-white"] .bg-\[\#07241b\] {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+body[data-theme="pure-minimal-white"] .bg-\[\#0c382b\] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+}
+
+body[data-theme="pure-minimal-white"] .bg-\[\#124233\] {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+body[data-theme="pure-minimal-white"] .bg-\[\#1a4d3e\] {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="pure-minimal-white"] .border-\[\#2d5848\],
+body[data-theme="pure-minimal-white"] .border-\[\#1b4e3e\] {
+    border-color: #cbd5e1 !important;
+}
+
+body[data-theme="pure-minimal-white"] .text-\[\#e2d5b6\] {
+    color: #334155 !important;
+}
+
+body[data-theme="pure-minimal-white"] .text-\[\#d4af37\] {
+    color: #0284c7 !important;
+}
+
+body[data-theme="pure-minimal-white"] .bg-\[\#d4af37\] {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="pure-minimal-white"] .text-white {
+    color: #0f172a !important;
+}

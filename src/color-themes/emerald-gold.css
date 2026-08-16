@@ -1,0 +1,19 @@
+:root {
+    --emerald-gold-bg: #07241b;
+    --emerald-gold-card: #0c382b;
+    --emerald-gold-accent: #d4af37;
+    --emerald-gold-text: #ffffff;
+}
+
+body[data-theme="emerald-gold"],
+body:not([data-theme]) {
+    background-color: #07241b;
+    color: #ffffff;
+}
+
+body[data-theme="emerald-gold"] .bg-\[\#124233\] {
+    background-color: #07241b !important;
+    color: #ffffff;
+}
+
+body[data-theme="emerald-gold"] .text-\[\#0c382b\] {}

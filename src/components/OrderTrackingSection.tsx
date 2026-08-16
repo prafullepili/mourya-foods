@@ -37,7 +37,7 @@ const INITIAL_MOCK_ORDERS: Record<string, TrackedOrder> = {
     pincode: '400053',
     items: [
       { product: PRODUCTS[0], quantity: 2 }, // 100g raw
-      { product: PRODUCTS[5], quantity: 1 }, // Pudina
+      { product: PRODUCTS[1], quantity: 1 }, // Pudina
     ],
     totalAmount: 488,
     paymentMethod: 'UPI (GPay)',
@@ -674,21 +674,21 @@ export const OrderTrackingSection: React.FC = () => {
                     <div key={i} className="bg-[#07241b] p-3 rounded-xl border border-[#2d5848] flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
                         <img
-                          src={item.product.image}
-                          alt={item.product.name}
+                          src={item.product?.image}
+                          alt={item.product?.name}
                           className="w-14 h-14 object-cover rounded-lg border border-[#2d5848] shrink-0"
                           referrerPolicy="no-referrer"
                         />
                         <div>
-                          <h5 className="font-bold text-white text-xs">{item.product.name}</h5>
-                          <p className="text-[11px] text-[#d4af37] font-semibold">{item.product.variant} • ₹{item.product.price} each</p>
+                          <h5 className="font-bold text-white text-xs">{item.product?.name}</h5>
+                          <p className="text-[11px] text-[#d4af37] font-semibold">{item.product?.variant} • ₹{item.product?.price} each</p>
                           <span className="text-[10px] text-gray-400">Slow Roasted • Nitrogen Sealed</span>
                         </div>
                       </div>
 
                       <div className="text-right shrink-0">
-                        <span className="text-xs text-gray-300 block font-semibold">Qty: {item.quantity}</span>
-                        <strong className="text-sm text-white font-mono">₹{item.product.price * item.quantity}</strong>
+                        <span className="text-xs text-gray-300 block font-semibold">Qty: {item?.quantity}</span>
+                        <strong className="text-sm text-white font-mono">₹{item.product?.price * item?.quantity}</strong>
                       </div>
                     </div>
                   ))}

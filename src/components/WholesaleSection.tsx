@@ -59,15 +59,15 @@ export const WholesaleSection: React.FC = () => {
   ];
 
   return (
-    <section id="wholesale" className="py-16 md:py-24 bg-[#0c382b] bg-lotus-watermark text-[#fcf8f2] font-sans relative">
+    <section id="wholesale" className="py-10 md:py-10 bg-[#0c382b] bg-lotus-watermark text-[#fcf8f2] font-sans relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <span className="text-[#d4af37] bg-[#1a4d3e] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#d4af37]/30">
             B2B Trade & Wholesale Supply
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white pt-3">
             Become a MOURYA FOODS Partner
           </h2>
           <p className="text-sm sm:text-base text-[#e2d5b6]">
@@ -77,7 +77,7 @@ export const WholesaleSection: React.FC = () => {
         </div>
 
         {/* Partner Categories Badges */}
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[#d4af37] mb-6">
             Bulk Orders Available For:
           </p>

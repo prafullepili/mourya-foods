@@ -25,15 +25,15 @@ export const WhyChooseUs: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#0c382b] text-[#fcf8f2] font-sans relative border-t border-[#1b4e3e]">
+    <section className="py-10 md:py-10 bg-[#0c382b] text-[#fcf8f2] font-sans relative border-t border-[#1b4e3e]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <span className="text-[#d4af37] bg-[#1a4d3e] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#d4af37]/30">
             Unmatched Brand Value
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white pt-3">
             Why Choose MOURYA FOODS?
           </h2>
           <p className="text-sm sm:text-base text-[#e2d5b6]">

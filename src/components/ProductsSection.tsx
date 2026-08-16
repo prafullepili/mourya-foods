@@ -62,8 +62,8 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
     const matchesCategory = 
       activeCategory === 'all' || 
       (activeCategory === 'raw' && product.category === 'raw') ||
-      (activeCategory === 'flavored' && product.category === 'flavored') ||
-      (activeCategory === 'gift' && product.category === 'gift');
+      (activeCategory === 'flavored' && product.category === 'flavored')
+      // (activeCategory === 'gift' && product.category === 'gift');
 
     const matchesSearch = 
       searchTerm === '' || 
@@ -82,11 +82,10 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
   };
 
   return (
-    <section id="products" className="py-16 md:py-24 bg-[#0c382b] bg-lotus-watermark text-[#fcf8f2] font-sans relative">
+    <section id="products" className="py-10 md:py-10 bg-[#0c382b] bg-lotus-watermark text-[#fcf8f2] font-sans relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1a4d3e] text-[#d4af37] text-xs font-bold uppercase tracking-wider border border-[#d4af37]/30">
             <Sparkles className="w-3.5 h-3.5" />
             Direct Online Store
@@ -94,19 +93,19 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Our Products & Pack Variants
           </h2>
-          <p className="text-sm sm:text-base text-[#e2d5b6]/90 max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-[#d8c292] max-w-xl mx-auto">
             Choose from pure unseasoned Bihar Phool Makhana in 100g to 1kg sizes, or indulge in our chef-curated slow-roasted flavored line.
           </p>
           <div className="w-20 h-1 bg-[#d4af37] mx-auto rounded-full" />
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        {/* <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
           {[
             { id: 'all', label: 'All Products (10)' },
             { id: 'raw', label: '🌿 Raw Premium Bihar Makhana (100g - 1kg)' },
             { id: 'flavored', label: '🔥 Seasoned Roasted Makhana' },
-            { id: 'gift', label: '🎁 Gift & Festival Boxes' },
+            // { id: 'gift', label: '🎁 Gift & Festival Boxes' },
           ].map((cat) => (
             <button
               key={cat.id}
@@ -120,7 +119,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
               {cat.label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -141,7 +140,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                     </span>
                   )}
                   {discountPercent > 0 && (
-                    <span className="bg-red-600 text-white font-bold text-[10px] px-2 py-0.5 rounded-md shadow">
+                    <span className="bg-red-600 text-[#fff]/90 font-bold text-[10px] px-2 py-0.5 rounded-md shadow">
                       {discountPercent}% OFF
                     </span>
                   )}
@@ -170,7 +169,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                       e.stopPropagation();
                       setSelectedProduct(product);
                     }}
-                    className="absolute bottom-3 right-3 bg-[#0c382b]/90 hover:bg-[#d4af37] hover:text-[#0c382b] text-white p-2 rounded-full border border-[#2d5848] transition-all opacity-0 group-hover:opacity-100 shadow-md"
+                    className="absolute bottom-3 right-3 bg-[#0c382b]/90 hover:bg-[#d4af37] hover:text-[#0c382b] text-[#fff] p-2 rounded-full border border-[#2d5848] transition-all opacity-0 group-hover:opacity-100 shadow-md"
                     title="Quick View Details"
                   >
                     <Eye className="w-4 h-4" />
@@ -179,7 +178,6 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
 
                 {/* Card Body */}
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                  
                   <div className="space-y-1.5">
                     {/* Category / Weight Tag */}
                     <div className="flex justify-between items-center text-xs">
@@ -381,7 +379,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
           </div>
 
           {/* Quality Standards Assurance Footer */}
-          <div className="mt-8 pt-6 border-t border-[#205141] grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {/* <div className="mt-8 pt-6 border-t border-[#205141] grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="flex items-center justify-center gap-2 text-xs text-[#e2d5b6]">
               <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
               <span>Triple-Layer Zip Seal</span>
@@ -398,7 +396,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
               <Sparkles className="w-4 h-4 text-[#d4af37]" />
               <span>Direct Mithila Lotus Ponds</span>
             </div>
-          </div>
+          </div> */}
 
         </div>
 
@@ -408,7 +406,6 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
       {selectedProduct && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-[#0c382b] border-2 border-[#d4af37] rounded-3xl max-w-2xl w-full p-6 sm:p-8 text-[#fcf8f2] relative shadow-2xl animate-scaleIn max-h-[90vh] overflow-y-auto">
-            
             <button
               onClick={() => { setSelectedProduct(null); setSelectedQty(1); }}
               className="absolute top-4 right-4 text-gray-300 hover:text-white bg-[#124233] p-2 rounded-full"
