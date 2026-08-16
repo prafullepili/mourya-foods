@@ -1,7 +1,7 @@
 import { ThemeOption } from '../types';
 
 export const THEMES: ThemeOption[] = [
-   {
+  {
     id: 'emerald-gold',
     name: 'Mithila Emerald & Gold',
     subtitle: 'Signature Royal Dark Green',
@@ -10,6 +10,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#d4af37',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: true,
   },
   {
     id: 'suvria-organic',
@@ -20,6 +21,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#d95328',
     textPreview: '#082c21',
     isDark: false,
+    isReady: false,
   },
   {
     id: 'organic-light',
@@ -30,6 +32,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#0c5838',
     textPreview: '#0b241a',
     isDark: false,
+    isReady: false,
   },
   {
     id: 'golden-harvest',
@@ -40,6 +43,8 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#b37b0d',
     textPreview: '#2d1f05',
     isDark: false,
+    isReady: false,
+
   },
   {
     id: 'midnight-obsidian',
@@ -50,6 +55,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#e5b839',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: false,
   },
   {
     id: 'ruby-lotus',
@@ -60,6 +66,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#f5b236',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: false,
   },
   {
     id: 'copper-terracotta',
@@ -70,6 +77,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#e06a3b',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: false,
   },
   {
     id: 'teal-peacock',
@@ -80,6 +88,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#38bdf8',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: false,
   },
   {
     id: 'sunflower-gold',
@@ -90,6 +99,8 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#d97706',
     textPreview: '#1e1b4b',
     isDark: false,
+    isReady: false,
+
   },
   {
     id: 'saffron-sunset',
@@ -100,6 +111,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#f97316',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: false,
   },
   {
     id: 'plum-violet',
@@ -110,6 +122,8 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#c084fc',
     textPreview: '#ffffff',
     isDark: true,
+    isReady: false,
+
   },
   {
     id: 'pure-minimal-white',
@@ -120,5 +134,7 @@ export const THEMES: ThemeOption[] = [
     accentPreview: '#0284c7',
     textPreview: '#0f172a',
     isDark: false,
+    isReady: false,
+
   },
 ];

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { QrCode, X, Globe, Instagram, ShoppingBag, PhoneCall, Sparkles, CheckCircle2, ArrowRight, Share2, ExternalLink } from 'lucide-react';
 import { SocialLinktreeCard } from './SocialLinktreeCard';
 
@@ -15,12 +15,29 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
 }) => {
   const [activeQrType, setActiveQrType] = useState<'social' | 'pouch'>('social');
 
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if(event.repeat) return
+      if (event.key === 'Escape') {
+        onClose(); // Call the parent function to close the modal
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose])
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-[#0c382b] border-2 border-[#d4af37] rounded-3xl max-w-lg w-full p-6 sm:p-7 text-[#fcf8f2] relative shadow-2xl animate-scaleIn text-center space-y-5 my-8 max-h-[90vh] overflow-y-auto no-scrollbar">
-        
+
         {/* Close button */}
         <button
           onClick={onClose}
@@ -35,7 +52,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
             <QrCode className="w-3.5 h-3.5" />
             Official QR Code Hub
           </div>
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold mt-2 text-white">
             Connect With MOURYA FOODS
           </h3>
           <p className="text-xs text-[#e2d5b6]">
@@ -47,23 +64,21 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
         <div className="flex bg-[#124233] p-1.5 rounded-2xl border border-[#2d5848] text-xs font-bold gap-1">
           <button
             onClick={() => setActiveQrType('social')}
-            className={`flex-1 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${
-              activeQrType === 'social'
-                ? 'bg-[#d0f216] text-black shadow-lg font-black'
-                : 'text-gray-300 hover:text-white'
-            }`}
+            className={`flex-1 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${activeQrType === 'social'
+              ? 'bg-[#d0f216] text-black shadow-lg font-black'
+              : 'text-gray-300 hover:text-white'
+              }`}
           >
             <Share2 className="w-4 h-4" />
             <span>Social Handles QR</span>
           </button>
-          
+
           <button
             onClick={() => setActiveQrType('pouch')}
-            className={`flex-1 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${
-              activeQrType === 'pouch'
-                ? 'bg-[#d4af37] text-[#0c382b] shadow-lg font-black'
-                : 'text-gray-300 hover:text-white'
-            }`}
+            className={`flex-1 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${activeQrType === 'pouch'
+              ? 'bg-[#d4af37] text-[#0c382b] shadow-lg font-black'
+              : 'text-gray-300 hover:text-white'
+              }`}
           >
             <QrCode className="w-4 h-4" />
             <span>Pouch Smart QR</span>
@@ -86,44 +101,44 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
             {/* QR Code Visual / Scan Simulator */}
             <div className="relative mx-auto w-44 h-44 bg-white p-4 rounded-2xl border-4 border-[#d4af37] shadow-inner flex flex-col items-center justify-center group">
               <svg className="w-full h-full text-[#0c382b]" viewBox="0 0 100 100" fill="currentColor">
-                <rect x="5" y="5" width="25" height="25" fill="#0c382b"/>
-                <rect x="9" y="9" width="17" height="17" fill="white"/>
-                <rect x="13" y="13" width="9" height="9" fill="#0c382b"/>
+                <rect x="5" y="5" width="25" height="25" fill="#0c382b" />
+                <rect x="9" y="9" width="17" height="17" fill="white" />
+                <rect x="13" y="13" width="9" height="9" fill="#0c382b" />
 
-                <rect x="70" y="5" width="25" height="25" fill="#0c382b"/>
-                <rect x="74" y="9" width="17" height="17" fill="white"/>
-                <rect x="78" y="13" width="9" height="9" fill="#0c382b"/>
+                <rect x="70" y="5" width="25" height="25" fill="#0c382b" />
+                <rect x="74" y="9" width="17" height="17" fill="white" />
+                <rect x="78" y="13" width="9" height="9" fill="#0c382b" />
 
-                <rect x="5" y="70" width="25" height="25" fill="#0c382b"/>
-                <rect x="9" y="74" width="17" height="17" fill="white"/>
-                <rect x="13" y="78" width="9" height="9" fill="#0c382b"/>
+                <rect x="5" y="70" width="25" height="25" fill="#0c382b" />
+                <rect x="9" y="74" width="17" height="17" fill="white" />
+                <rect x="13" y="78" width="9" height="9" fill="#0c382b" />
 
-                <circle cx="50" cy="50" r="14" fill="#0c382b"/>
-                <circle cx="50" cy="50" r="12" fill="#d4af37"/>
+                <circle cx="50" cy="50" r="14" fill="#0c382b" />
+                <circle cx="50" cy="50" r="12" fill="#d4af37" />
 
-                <rect x="35" y="10" width="6" height="6" fill="#0c382b"/>
-                <rect x="45" y="10" width="6" height="6" fill="#0c382b"/>
-                <rect x="55" y="10" width="6" height="6" fill="#0c382b"/>
-                <rect x="35" y="20" width="6" height="6" fill="#0c382b"/>
-                <rect x="50" y="20" width="6" height="6" fill="#0c382b"/>
-                
-                <rect x="10" y="35" width="6" height="6" fill="#0c382b"/>
-                <rect x="20" y="35" width="6" height="6" fill="#0c382b"/>
-                <rect x="10" y="45" width="6" height="6" fill="#0c382b"/>
-                <rect x="20" y="55" width="6" height="6" fill="#0c382b"/>
+                <rect x="35" y="10" width="6" height="6" fill="#0c382b" />
+                <rect x="45" y="10" width="6" height="6" fill="#0c382b" />
+                <rect x="55" y="10" width="6" height="6" fill="#0c382b" />
+                <rect x="35" y="20" width="6" height="6" fill="#0c382b" />
+                <rect x="50" y="20" width="6" height="6" fill="#0c382b" />
 
-                <rect x="70" y="35" width="6" height="6" fill="#0c382b"/>
-                <rect x="85" y="35" width="6" height="6" fill="#0c382b"/>
-                <rect x="75" y="45" width="6" height="6" fill="#0c382b"/>
-                <rect x="80" y="55" width="6" height="6" fill="#0c382b"/>
+                <rect x="10" y="35" width="6" height="6" fill="#0c382b" />
+                <rect x="20" y="35" width="6" height="6" fill="#0c382b" />
+                <rect x="10" y="45" width="6" height="6" fill="#0c382b" />
+                <rect x="20" y="55" width="6" height="6" fill="#0c382b" />
 
-                <rect x="35" y="70" width="6" height="6" fill="#0c382b"/>
-                <rect x="45" y="75" width="6" height="6" fill="#0c382b"/>
-                <rect x="55" y="70" width="6" height="6" fill="#0c382b"/>
-                <rect x="40" y="85" width="6" height="6" fill="#0c382b"/>
-                <rect x="60" y="85" width="6" height="6" fill="#0c382b"/>
-                <rect x="75" y="75" width="6" height="6" fill="#0c382b"/>
-                <rect x="85" y="85" width="6" height="6" fill="#0c382b"/>
+                <rect x="70" y="35" width="6" height="6" fill="#0c382b" />
+                <rect x="85" y="35" width="6" height="6" fill="#0c382b" />
+                <rect x="75" y="45" width="6" height="6" fill="#0c382b" />
+                <rect x="80" y="55" width="6" height="6" fill="#0c382b" />
+
+                <rect x="35" y="70" width="6" height="6" fill="#0c382b" />
+                <rect x="45" y="75" width="6" height="6" fill="#0c382b" />
+                <rect x="55" y="70" width="6" height="6" fill="#0c382b" />
+                <rect x="40" y="85" width="6" height="6" fill="#0c382b" />
+                <rect x="60" y="85" width="6" height="6" fill="#0c382b" />
+                <rect x="75" y="75" width="6" height="6" fill="#0c382b" />
+                <rect x="85" y="85" width="6" height="6" fill="#0c382b" />
               </svg>
 
               <div className="absolute inset-x-2 h-1 bg-emerald-500 shadow-[0_0_15px_#10b981] animate-bounce" />

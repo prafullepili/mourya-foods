@@ -123,6 +123,7 @@ export interface ThemeOption {
   accentPreview: string;
   textPreview: string;
   isDark: boolean;
+  isReady: boolean;
 }
 
 export interface OrderDetails {

@@ -341,7 +341,7 @@ export default function App() {
           href="https://wa.me/919137738436?text=Hello%20MOURYA%20FOODS%20Team%2C%20I%20would%20like%20to%20order%20Makhana."
           target="_blank"
           rel="noreferrer"
-          className="bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border-2 border-emerald-300 group relative"
+          className="bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border-2 group relative"
           title="Chat on WhatsApp"
           id="floating-whatsapp-btn"
         >

@@ -47,7 +47,7 @@ export const SocialLinktreeCard: React.FC<SocialLinktreeCardProps> = ({ compact 
       </div>
 
       {/* QR Code Container */}
-      <div className="mt-6 flex flex-col items-end">
+      <div className="mt-3 flex flex-col items-center">
         <div className="bg-white p-3 sm:p-4 rounded-2xl border-2 border-black shadow-lg relative group">
           
           {/* Accurate QR Code SVG for linktr.ee/mouryafoods */}

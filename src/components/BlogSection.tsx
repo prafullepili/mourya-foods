@@ -19,7 +19,7 @@ export const BlogSection: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedTag, setSelectedTag] = useState<string>('All');
 
-  const allTags = ['All', 'Superfood', 'Makhana Benefits', 'GI Tag', 'Mithila Makhana', 'Weight Loss', 'Makhana Recipes'];
+  const allTags = ['All', 'Makhana Benefits', 'Mithila Makhana', 'Weight Loss', 'Makhana Recipes'];
 
   const filteredPosts = BLOG_POSTS.filter((post) => {
     const matchesSearch = 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Palette, X, Check, Sparkles, Sun, Moon, Eye } from 'lucide-react';
 import { ThemeId } from '../types';
 import { THEMES } from '../data/themes';
@@ -16,12 +16,36 @@ export const ThemeSelectorModal: React.FC<ThemeSelectorModalProps> = ({
   currentTheme,
   onSelectTheme,
 }) => {
-  if (!isOpen) return null;
 
+  useEffect(() => {
+    if (!isOpen) return;
+    console.log('Effect Run')
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      console.log({
+        key: event.key,
+        code: event.keyCode,
+        repeat: event.repeat,
+        isTrusted: event.isTrusted,
+      });
+
+      if (event.key === 'Escape') {
+        onClose(); // Call the parent function to close the modal
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose])
+
+  if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-[#0c382b] border-2 border-[#d4af37] rounded-3xl max-w-3xl w-full p-6 sm:p-8 text-[#fcf8f2] relative shadow-2xl animate-scaleIn space-y-6 my-8 max-h-[90vh] overflow-y-auto no-scrollbar">
-        
+
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -53,11 +77,11 @@ export const ThemeSelectorModal: React.FC<ThemeSelectorModalProps> = ({
               <button
                 key={theme.id}
                 onClick={() => onSelectTheme(theme.id)}
-                className={`p-4 rounded-2xl border-2 text-left transition-all relative overflow-hidden group flex flex-col justify-between ${
-                  isSelected
-                    ? 'border-[#d4af37] bg-[#1a4d3e] shadow-xl ring-2 ring-[#d4af37]/60 scale-[1.02]'
-                    : 'border-[#2d5848] bg-[#124233] hover:border-[#d4af37]/60 hover:bg-[#185240]'
-                }`}
+                className={`p-4 rounded-2xl border-2 text-left transition-all relative overflow-hidden group ${theme.isReady ? 'cursor-pointer' : ''} flex flex-col justify-between ${isSelected
+                  ? 'border-[#d4af37] bg-[#1a4d3e] shadow-xl ring-2 ring-[#d4af37]/60 scale-[1.02]'
+                  : 'border-[#2d5848] bg-[#124233] hover:border-[#d4af37]/60 hover:bg-[#185240]'
+                  }`}
+                disabled={!theme.isReady}
               >
                 {/* Active Badge */}
                 {isSelected && (

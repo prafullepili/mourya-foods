@@ -107,12 +107,14 @@ export const Header: React.FC<HeaderProps> = ({
                     <button
                       key={th.id}
                       onClick={() => onSelectTheme(th.id)}
-                      className={`w-3.5 h-3.5 rounded-full border transition-all ${currentTheme === th.id
+                      className={`w-3.5 h-3.5 rounded-full border transition-all ${th.isReady ? 'cursor-pointer' : ''} ${currentTheme === th.id
                         ? 'border-white scale-125 ring-2 ring-[#d4af37]'
                         : 'border-transparent opacity-80 hover:opacity-100 hover:scale-110'
                         }`}
                       style={{ backgroundColor: th.accentPreview }}
-                      title={`${th.name} (${th.subtitle})`}
+                      // title={`${th.name} (${th.subtitle})`}
+                      title={th.isReady ? th.name + ' ' + th.subtitle : 'Coming Soon'}
+                      disabled={!th.isReady}
                     />
                   ))}
                 </div>
