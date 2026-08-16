@@ -6,7 +6,7 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    base: '/mourya-foods',
+    base: '/mourya-foods/',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
