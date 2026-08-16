@@ -41,7 +41,7 @@ export default function App() {
   // Color Theme State
   const [currentTheme, setCurrentTheme] = useState<ThemeId>(() => {
     try {
-      return (localStorage.getItem('mourya_selected_theme') as ThemeId) || 'suvria-organic';
+      return (localStorage.getItem('mourya_selected_theme') as ThemeId) || 'emerald-gold';
     } catch {
       return 'suvria-organic';
     }
